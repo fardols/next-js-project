@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Минималистичная деловая палитра: нейтральные серые + один акцент. */
+@theme {
+  --color-surface: #ffffff;
+  --color-canvas: #f6f7f9;
+  --color-line: #e3e6ea;
+  --color-ink: #16191d;
+  --color-muted: #646b75;
+  --color-accent: #1f4e79;
+  --color-accent-hover: #17395a;
+  --color-danger: #b3261e;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@layer components {
+  /* ---- Поля ввода ---- */
+  .field {
+    @apply w-full rounded border border-line bg-surface px-3 py-2 text-sm text-ink
+           outline-none transition-colors;
+    @apply focus:border-accent focus:ring-2 focus:ring-accent/20;
+    @apply disabled:cursor-not-allowed disabled:bg-canvas disabled:text-muted;
+  }
+  .field-invalid {
+    @apply border-danger focus:border-danger focus:ring-danger/20;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  .hint {
+    @apply mt-1 text-xs text-muted;
+  }
+  .error-text {
+    @apply mt-1 text-xs text-danger;
+  }
+
+  /* ---- Кнопки ---- */
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded border
+           px-3.5 py-2 text-sm font-medium whitespace-nowrap transition-colors
+           disabled:pointer-events-none disabled:opacity-55;
+  }
+  .btn-primary {
+    @apply border-accent bg-accent text-white hover:bg-accent-hover;
+  }
+  .btn-secondary {
+    @apply border-line bg-surface text-ink hover:bg-canvas;
+  }
+  .btn-danger {
+    @apply border-danger bg-surface text-danger hover:bg-danger hover:text-white;
+  }
+
+  /* ---- Поверхности ---- */
+  .card {
+    @apply rounded-lg border border-line bg-surface;
+  }
+}
