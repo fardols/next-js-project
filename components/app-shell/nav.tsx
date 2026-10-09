@@ -12,9 +12,9 @@ export function MainNav() {
 
       {/* Ссылки попадают в статическую оболочку; подсветка активного
           раздела зависит от URL и дорисовывается после гидратации. */}
-      <Suspense fallback={<NavLinksFallback />}>
-        <NavLinks />
-      </Suspense>
+      {/*<Suspense fallback={<NavLinksFallback />}>*/}
+      {/*  <NavLinks />*/}
+      {/*</Suspense>*/}
     </nav>
   );
 }
