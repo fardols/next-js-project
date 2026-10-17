@@ -5,6 +5,13 @@
 управлением колонками.
 
 Выполнено по тестовому заданию (`docs/WebApp_Test.pdf`).
+
+Форма реестра сделок
+![app_screen](docs/deels_screen.png)
+
+Форма создания новой сделки
+![new_deel_screen](docs/new_deel_screen.png)
+
 ## Стек
 
 - **Next.js 16**, **React 19**
